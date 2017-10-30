@@ -1,0 +1,23 @@
+group 'com.mindorks'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'Demo'
+        )
+    }
+}
+
+dependencies {
+    compile project(':graph')
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
