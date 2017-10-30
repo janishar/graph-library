@@ -10,13 +10,41 @@ public class Demo {
     }
 
     public static void testGraph() {
-
-//        testDFS(getTestGraph());
-        testBFS(getTestGraph());
+        testKruskalMST();
     }
 
-    private static Graph getTestGraph() {
-        Graph graph = new UGraph(7);
+    private static void testKruskalMST() {
+        WeightedGraph graph = new EdgeWeightedGraph(6);
+        graph.addEdge(new Edge(0, 1, 0.21));
+        graph.addEdge(new Edge(1, 2, 0.11));
+        graph.addEdge(new Edge(2, 4, 0.93));
+        graph.addEdge(new Edge(1, 3, 0.76));
+        graph.addEdge(new Edge(3, 4, 0.40));
+        graph.addEdge(new Edge(1, 5, 0.50));
+        graph.addEdge(new Edge(0, 5, 0.97));
+        graph.addEdge(new Edge(5, 4, 0.38));
+
+        MST mst = new KruskalMST(graph);
+        print(mst.edges());
+        print(mst.weight());
+    }
+
+    private static void testUF() {
+        UF uf = new QuickUnionUF(10);
+        uf.union(4, 3);
+        uf.union(3, 8);
+        uf.union(6, 5);
+        uf.union(9, 4);
+        uf.union(2, 1);
+        uf.union(5, 0);
+        uf.union(7, 2);
+        uf.union(6, 1);
+        uf.union(7, 3);
+        print(uf);
+    }
+
+    private static SimpleGraph getTestGraph() {
+        SimpleGraph graph = new UndirectedGraph(7);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(0, 6);
@@ -28,17 +56,17 @@ public class Demo {
         return graph;
     }
 
-    private static void testDFS(Graph graph) {
+    private static void testDFS(SimpleGraph graph) {
         Paths paths = new DepthFirstPaths(graph, 0);
         print(paths.pathTo(5));
     }
 
-    private static void testBFS(Graph graph) {
+    private static void testBFS(SimpleGraph graph) {
         BreathFirstPaths paths = new BreathFirstPaths(graph, 0);
         print(paths.pathTo(4));// will give the shortest path
     }
 
-    public static void testBag() {
+    private static void testBag() {
         Bag<String> bag = new Bag<>();
         bag.put("Janishar");
         bag.put("Ali");
@@ -54,7 +82,7 @@ public class Demo {
         }
     }
 
-    public static <T> void print(T t) {
+    private static <T> void print(T t) {
         System.out.println(t);
     }
 }

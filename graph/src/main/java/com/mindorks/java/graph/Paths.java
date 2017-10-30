@@ -4,12 +4,12 @@ import java.util.Stack;
 
 public abstract class Paths {
 
-    protected Graph G;
-    protected int s; //source vertex
+    protected final SimpleGraph G;
+    protected final int s; //source vertex
     protected boolean[] marked;
     protected int[] edgeTo;
 
-    public Paths(Graph G, int s) {
+    public Paths(SimpleGraph G, int s) {
         this.G = G;
         this.s = s;
         marked = new boolean[G.V()];

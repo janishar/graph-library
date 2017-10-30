@@ -2,10 +2,10 @@ package com.mindorks.java.graph;
 
 import java.util.LinkedList;
 
-public class UGraph implements Graph {
+public class UndirectedGraph implements SimpleGraph {
 
     // number of vertices
-    private int V;
+    private final int V;
 
     /**
      * adjacency list implementation of data representation.
@@ -16,7 +16,7 @@ public class UGraph implements Graph {
 
 
     @SuppressWarnings("unchecked")
-    public UGraph(int V) {
+    public UndirectedGraph(int V) {
         this.V = V;
         adj = (LinkedList<Integer>[]) new LinkedList[V]; // array of Generic List has to be cast;
         for (int v = 0; v < V; v++)

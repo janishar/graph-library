@@ -1,11 +1,11 @@
 package com.mindorks.java.graph;
 
-public interface Graph {
+public interface SimpleGraph {
 
     /**
      * prints all the edges of the graph
      */
-    static void print(Graph G) {
+    static void print(SimpleGraph G) {
         for (int v = 0; v < G.V(); v++) {
             for (int w : G.adj(v)) {
                 System.out.println(v + "-" + w);
@@ -16,13 +16,13 @@ public interface Graph {
     /**
      * @return number of edges connected to the vertex v
      */
-    static int degree(Graph G, int v) {
+    static int degree(SimpleGraph G, int v) {
         int degree = 0;
         for (int w : G.adj(v)) degree++;
         return degree;
     }
 
-    static int maxDegree(Graph G) {
+    static int maxDegree(SimpleGraph G) {
         int max = 0;
         for (int v = 0; v < G.V(); ) {
             int degree = degree(G, v);
@@ -31,11 +31,11 @@ public interface Graph {
         return max;
     }
 
-    static double averageDegree(Graph G) {
+    static double averageDegree(SimpleGraph G) {
         return 2.0 * G.E() / G.V(); // each edge is counted twice v-w and w-v
     }
 
-    static int numberOfSelfLoops(Graph G) {
+    static int numberOfSelfLoops(SimpleGraph G) {
         int count = 0;
         for (int v = 0; v < G.V(); v++)
             for (int w : G.adj(v))

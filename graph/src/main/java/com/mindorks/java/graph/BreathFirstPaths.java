@@ -5,12 +5,12 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 public class BreathFirstPaths extends Paths {
 
-    public BreathFirstPaths(Graph G, int s) {
+    public BreathFirstPaths(SimpleGraph G, int s) {
         super(G, s);
         bfs(G, s);
     }
 
-    private void bfs(Graph G, int s) {
+    private void bfs(SimpleGraph G, int s) {
         Queue<Integer> q = new LinkedBlockingDeque<>();
         q.add(s);
         marked[s] = true;
