@@ -1,4 +1,5 @@
-import com.mindorks.java.graph.*;
+import com.mindorks.java.graph.core.*;
+import com.mindorks.java.graph.utils.*;
 
 /**
  * Created by janisharali on 26/10/17.

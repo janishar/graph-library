@@ -1,4 +1,7 @@
-package com.mindorks.java.graph;
+package com.mindorks.java.graph.core;
+
+import com.mindorks.java.graph.utils.QuickUnionUF;
+import com.mindorks.java.graph.utils.UF;
 
 import java.util.PriorityQueue;
 import java.util.Queue;

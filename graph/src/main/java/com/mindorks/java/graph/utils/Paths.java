@@ -1,4 +1,6 @@
-package com.mindorks.java.graph;
+package com.mindorks.java.graph.utils;
+
+import com.mindorks.java.graph.core.SimpleGraph;
 
 import java.util.Stack;
 

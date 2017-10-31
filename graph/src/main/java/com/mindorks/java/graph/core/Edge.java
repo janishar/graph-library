@@ -1,4 +1,4 @@
-package com.mindorks.java.graph;
+package com.mindorks.java.graph.core;
 
 public class Edge implements Comparable<Edge> {
 

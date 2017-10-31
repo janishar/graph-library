@@ -1,4 +1,4 @@
-package com.mindorks.java.graph;
+package com.mindorks.java.graph.core;
 
 import java.util.Arrays;
 import java.util.LinkedList;
