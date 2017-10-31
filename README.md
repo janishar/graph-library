@@ -1,3 +1,3 @@
-# Graph Library
+# Graph Java Library
 
-Graph Data Structure and Algorithms
+Graph Data Structure and Algorithms.
