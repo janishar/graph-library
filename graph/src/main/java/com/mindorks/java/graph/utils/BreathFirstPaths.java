@@ -19,7 +19,7 @@ package com.mindorks.java.graph.utils;
 import com.mindorks.java.graph.core.SimpleGraph;
 
 import java.util.Queue;
-import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class BreathFirstPaths extends Paths {
 
@@ -29,7 +29,7 @@ public class BreathFirstPaths extends Paths {
     }
 
     private void bfs(SimpleGraph G, int s) {
-        Queue<Integer> q = new LinkedBlockingDeque<>();
+        Queue<Integer> q = new LinkedBlockingQueue<>();
         q.add(s);
         marked[s] = true;
         while (!q.isEmpty()) {

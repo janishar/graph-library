@@ -27,7 +27,7 @@ public class Demo {
     }
 
     public static void testGraph() {
-        testKruskalMST();
+        testBFS(getTestGraph());
     }
 
     private static void testKruskalMST() {
