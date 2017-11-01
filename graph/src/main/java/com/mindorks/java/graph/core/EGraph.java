@@ -16,7 +16,7 @@
 
 package com.mindorks.java.graph.core;
 
-public interface WeightedGraph {
+public interface EGraph {
 
     void addEdge(Edge e);
 

@@ -16,18 +16,18 @@
 
 package com.mindorks.java.graph.utils;
 
-import com.mindorks.java.graph.core.SimpleGraph;
+import com.mindorks.java.graph.core.Graph;
 
 import java.util.Stack;
 
 public abstract class Paths {
 
-    protected final SimpleGraph G;
+    protected final Graph G;
     protected final int s; //source vertex
     protected boolean[] marked;
     protected int[] edgeTo;
 
-    public Paths(SimpleGraph G, int s) {
+    public Paths(Graph G, int s) {
         this.G = G;
         this.s = s;
         marked = new boolean[G.V()];

@@ -27,7 +27,7 @@ public class KruskalMST implements MST {
 
     private Queue<Edge> mst = new LinkedBlockingQueue<>();
 
-    public KruskalMST(WeightedGraph G) {
+    public KruskalMST(EGraph G) {
         PriorityQueue<Edge> pq = new PriorityQueue<>();// minimum priority queue
         for (Edge e : G.edges())
             pq.add(e);

@@ -20,7 +20,7 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Stack;
 
-public class EdgeWeightedGraph implements WeightedGraph {
+public class EdgeWeightedGraph implements EGraph {
 
     private final int V;
     private final LinkedList<Edge>[] adj;

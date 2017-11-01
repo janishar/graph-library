@@ -16,19 +16,19 @@
 
 package com.mindorks.java.graph.utils;
 
-import com.mindorks.java.graph.core.SimpleGraph;
+import com.mindorks.java.graph.core.Graph;
 
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class BreathFirstPaths extends Paths {
 
-    public BreathFirstPaths(SimpleGraph G, int s) {
+    public BreathFirstPaths(Graph G, int s) {
         super(G, s);
         bfs(G, s);
     }
 
-    private void bfs(SimpleGraph G, int s) {
+    private void bfs(Graph G, int s) {
         Queue<Integer> q = new LinkedBlockingQueue<>();
         q.add(s);
         marked[s] = true;

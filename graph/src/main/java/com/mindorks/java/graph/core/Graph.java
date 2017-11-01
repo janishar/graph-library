@@ -16,12 +16,12 @@
 
 package com.mindorks.java.graph.core;
 
-public interface SimpleGraph {
+public interface Graph {
 
     /**
      * prints all the edges of the graph
      */
-    static void print(SimpleGraph G) {
+    static void print(Graph G) {
         for (int v = 0; v < G.V(); v++) {
             for (int w : G.adj(v)) {
                 System.out.println(v + "-" + w);
@@ -32,13 +32,13 @@ public interface SimpleGraph {
     /**
      * @return number of edges connected to the vertex v
      */
-    static int degree(SimpleGraph G, int v) {
+    static int degree(Graph G, int v) {
         int degree = 0;
         for (int w : G.adj(v)) degree++;
         return degree;
     }
 
-    static int maxDegree(SimpleGraph G) {
+    static int maxDegree(Graph G) {
         int max = 0;
         for (int v = 0; v < G.V(); ) {
             int degree = degree(G, v);
@@ -47,11 +47,11 @@ public interface SimpleGraph {
         return max;
     }
 
-    static double averageDegree(SimpleGraph G) {
+    static double averageDegree(Graph G) {
         return 2.0 * G.E() / G.V(); // each edge is counted twice v-w and w-v
     }
 
-    static int numberOfSelfLoops(SimpleGraph G) {
+    static int numberOfSelfLoops(Graph G) {
         int count = 0;
         for (int v = 0; v < G.V(); v++)
             for (int w : G.adj(v))
@@ -62,7 +62,7 @@ public interface SimpleGraph {
     /**
      * Add an edge v-w
      */
-    void addEdge(int v, int w) throws IndexOutOfBoundsException;
+    void addEdge(int v, int w);
 
     /**
      * @return vertices adjacent to v

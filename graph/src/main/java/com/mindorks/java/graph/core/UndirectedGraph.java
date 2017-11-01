@@ -18,7 +18,7 @@ package com.mindorks.java.graph.core;
 
 import java.util.LinkedList;
 
-public class UndirectedGraph implements SimpleGraph {
+public class UndirectedGraph implements Graph {
 
     // number of vertices
     private final int V;
@@ -40,10 +40,7 @@ public class UndirectedGraph implements SimpleGraph {
     }
 
     @Override
-    public void addEdge(int v, int w) throws IndexOutOfBoundsException {
-        if (v < 0 || v >= V || w < 0 || w >= V)
-            throw new IndexOutOfBoundsException(
-                    "The vertices should between " + 0 + " and " + (V - 1));
+    public void addEdge(int v, int w) {
         adj[v].add(w);
         adj[w].add(v);
     }
@@ -61,5 +58,9 @@ public class UndirectedGraph implements SimpleGraph {
     @Override
     public int E() {
         return 0;
+    }
+
+    protected LinkedList<Integer>[] getAdjArray() {
+        return adj;
     }
 }

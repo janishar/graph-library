@@ -31,7 +31,7 @@ public class Demo {
     }
 
     private static void testKruskalMST() {
-        WeightedGraph graph = new EdgeWeightedGraph(6);
+        EGraph graph = new EdgeWeightedGraph(6);
         graph.addEdge(new Edge(0, 1, 0.21));
         graph.addEdge(new Edge(1, 2, 0.11));
         graph.addEdge(new Edge(2, 4, 0.93));
@@ -60,8 +60,8 @@ public class Demo {
         print(uf);
     }
 
-    private static SimpleGraph getTestGraph() {
-        SimpleGraph graph = new UndirectedGraph(7);
+    private static Graph getTestGraph() {
+        Graph graph = new UndirectedGraph(7);
         graph.addEdge(0, 1);
         graph.addEdge(0, 2);
         graph.addEdge(0, 6);
@@ -73,12 +73,12 @@ public class Demo {
         return graph;
     }
 
-    private static void testDFS(SimpleGraph graph) {
+    private static void testDFS(Graph graph) {
         Paths paths = new DepthFirstPaths(graph, 0);
         print(paths.pathTo(5));
     }
 
-    private static void testBFS(SimpleGraph graph) {
+    private static void testBFS(Graph graph) {
         BreathFirstPaths paths = new BreathFirstPaths(graph, 0);
         print(paths.pathTo(4));// will give the shortest path
     }

@@ -14,23 +14,19 @@
  * limitations under the License
  */
 
-package com.mindorks.java.graph.utils;
+package com.mindorks.java.graph.core;
 
-import com.mindorks.java.graph.core.Graph;
+public class DirectedGraph extends UndirectedGraph {
 
-public class DepthFirstPaths extends Paths {
-
-    public DepthFirstPaths(Graph G, int s) {
-        super(G, s);
-        dfs(G, s);
+    public DirectedGraph(int V) {
+        super(V);
     }
 
-    private void dfs(Graph G, int v) {
-        marked[v] = true;
-        for (int w : G.adj(v))
-            if (!marked[w]) {
-                dfs(G, w);
-                edgeTo[w] = v;
-            }
+    /**
+     * add edge v -> w
+     */
+    @Override
+    public void addEdge(int v, int w) {
+        getAdjArray()[v].add(w);
     }
 }
